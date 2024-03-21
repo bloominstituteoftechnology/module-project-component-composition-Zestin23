@@ -1,11 +1,23 @@
 import React from "react"
+import styled from "styled-components"
 
-export default function Figure({imageUrl, caption}) {
+const StyledFigure = styled.figure`
+  max-width: 50%;
+
+  figcaption {
+    font-style: italic;
+  }
+
+`
+
+export default function Figure({image, author, date}) {
     return (
-      <figure>
-        <img src={imageUrl} />
-        <figcaption>Awesome picture taken on {caption}</figcaption>
-      </figure>
+      <StyledFigure>
+        <img src={image} />
+        <figcaption>
+          The Photo of the Day by {author} on {date} 
+        </figcaption>
+      </StyledFigure>
     )
   
   }
